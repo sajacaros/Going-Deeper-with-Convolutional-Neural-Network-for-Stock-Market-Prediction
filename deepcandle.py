@@ -40,8 +40,8 @@ class deepcandle:
         Add Label column in dataframe
         Current close > previous close price ? true : false
         """
-        df_train[self.label] = df_train['Adj Close'] > df_train['Adj Close'].shift()
-        df_test[self.label] = df_test['Adj Close'] > df_test['Adj Close'].shift()
+        df_train[self.label] = df_train['Close'] > df_train['Close'].shift()
+        df_test[self.label] = df_test['Close'] > df_test['Close'].shift()
         return df_train, df_test
         
 
@@ -56,7 +56,7 @@ class deepcandle:
             ticker_data = df_train if data_type == 'train' else df_test
             groups = split_dataframe(ticker_data, self.window_size)
             for idx, group in enumerate(groups):
-                if len(group) == self.window_size and groups[idx].iloc[0]['Adj Close']:
+                if len(group) == self.window_size and groups[idx].iloc[0]['Close']:
                     label = '1' if groups[idx].iloc[0].Label else '0'
                     dir_path = 'dataset/' + data_type + '/' + label + '/'
                     file_name = ticker + '_' + str(idx) + '.jpg'

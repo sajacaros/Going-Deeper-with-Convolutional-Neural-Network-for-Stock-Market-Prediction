@@ -31,7 +31,7 @@ def save_to_candlestick(df, dimension, save_path, file_name):
     fig = plt.figure(figsize=(dimension / my_dpi,
                      dimension / my_dpi), dpi=my_dpi)
     ax1 = fig.add_subplot(1, 1, 1)
-    candlestick2_ochl(ax1, df['Open'], df['Adj Close'], df['High'],
+    candlestick2_ochl(ax1, df['Open'], df['Close'], df['High'],
                       df['Low'], width=1,
                       colorup='#77d879', colordown='#db3f3f')
     ax1.grid(False)

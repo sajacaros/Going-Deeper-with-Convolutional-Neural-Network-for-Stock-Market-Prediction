@@ -15,7 +15,7 @@ class cnn:
 
     def build_model(self, shape, seed=None):
         import numpy as np
-        from tensorflow.keras import layers
+        from keras import layers
         import tensorflow as tf
 
         if seed:
@@ -62,7 +62,7 @@ class cnn:
 
     def run_model(self):
         import math
-        from tensorflow.keras.optimizers import Adam
+        from keras.optimizers import Adam
         import numpy as np
         from sklearn.metrics import confusion_matrix
         from sklearn.metrics import classification_report

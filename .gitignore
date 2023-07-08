@@ -106,3 +106,4 @@ dmypy.json
 .pyre/
 dataset/*
 cnn_output.txt
+stockdatas/
